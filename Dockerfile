@@ -1,4 +1,4 @@
-FROM nocodb/nocodb:latest
+FROM nocodb/nocodb:0.202.8
 
 ADD https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem /usr/local/share/ca-certificates/rds-combined-ca-bundle.pem
 
