@@ -1,4 +1,4 @@
-FROM nocodb/nocodb:0.204.9
+FROM nocodb/nocodb:0.260.2
 
 # see https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesDownload
 ADD https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem /usr/local/share/ca-certificates/global-bundle.pem
