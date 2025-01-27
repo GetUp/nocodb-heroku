@@ -18,14 +18,10 @@ FROM nocodb/nocodb:0.260.2
 # through to knex.
 #
 # So as a result, you can't actually pass in any of the TLS settings
-# you'd expect from reading the docs for Postgres, pg, or
-# knex.
-#
-# It's only possible to download the RDS CA certs and include them
-# globally by setting NODE_EXTRA_CA_CERTS in the end. Additional
-# testing shows that setting NODE_EXTRA_CA_CERTS here in the
-# Dockerfile does not work either.
+# you'd expect from reading the docs for Postgres, pg, or knex, and
+# it is only possible to include the RDS CA certs globally by setting
+# NODE_EXTRA_CA_CERTS in the end.
 
-ADD https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem /usr/local/share/ca-certificates/global-bundle.pem
+ADD 20250127-RDS-global-bundle.pem /usr/local/share/ca-certificates/global-bundle.pem
 
 ENTRYPOINT ["sh", "/usr/src/appEntry/start.sh"]
